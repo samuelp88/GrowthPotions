@@ -1,20 +1,12 @@
-package com.samuelp88.growth.Items;
+package com.samuelp88.growth.items;
 
 import com.samuelp88.growth.entitys.GrowthPotionEntity;
-import com.samuelp88.growth.handlers.RegistryHandler;
-import com.samuelp88.growth.holder.ItemHolder;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
-import net.minecraft.potion.PotionBrewing;
-import net.minecraft.potion.PotionUtils;
-import net.minecraft.potion.Potions;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.common.brewing.BrewingRecipe;
-import net.minecraftforge.common.brewing.IBrewingRecipe;
 
 public class GrowthPotionItem extends ThrowablePotionItem {
 

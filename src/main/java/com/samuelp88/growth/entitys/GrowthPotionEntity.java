@@ -1,7 +1,5 @@
 package com.samuelp88.growth.entitys;
 
-import com.samuelp88.growth.Growth;
-import com.samuelp88.growth.Items.GrowthPotionItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.GrassBlock;
@@ -9,7 +7,6 @@ import net.minecraft.block.IGrowable;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.PotionEntity;
-import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;

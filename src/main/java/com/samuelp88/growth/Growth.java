@@ -1,13 +1,10 @@
 package com.samuelp88.growth;
 
-import com.samuelp88.growth.Items.GrowthPotionItem;
 import com.samuelp88.growth.handlers.RegistryHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;

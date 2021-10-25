@@ -1,9 +1,9 @@
 package com.samuelp88.growth.handlers;
 
-import com.samuelp88.growth.BrewRecipes.GrowthBrewRecipe;
+import com.samuelp88.growth.brewrecipes.GrowthBrewRecipe;
 import com.samuelp88.growth.Growth;
-import com.samuelp88.growth.Items.GrowthPotionItem;
-import com.samuelp88.growth.Items.StrongGrowthPotionItem;
+import com.samuelp88.growth.items.GrowthPotionItem;
+import com.samuelp88.growth.items.StrongGrowthPotionItem;
 import com.samuelp88.growth.entitys.GrowthPotionEntity;
 import com.samuelp88.growth.entitys.StrongGrowthPotionEntity;
 import com.samuelp88.growth.holder.ItemHolder;
@@ -72,7 +72,7 @@ public class RegistryHandler {
                 new GrowthBrewRecipe(
                         Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.SPLASH_POTION), Potions.WATER)),
                         Ingredient.of(new ItemStack(Items.BONE_BLOCK)),
-                        new ItemStack(ItemHolder.GROWTH_POTION_ITEM).setC
+                        new ItemStack(ItemHolder.GROWTH_POTION_ITEM)
                 )
         );
     }

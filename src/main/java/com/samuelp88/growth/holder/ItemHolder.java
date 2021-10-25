@@ -1,7 +1,7 @@
 package com.samuelp88.growth.holder;
 
 import com.samuelp88.growth.Growth;
-import com.samuelp88.growth.Items.GrowthPotionItem;
+import com.samuelp88.growth.items.GrowthPotionItem;
 import net.minecraftforge.registries.ObjectHolder;
 
 @ObjectHolder(Growth.MODID)

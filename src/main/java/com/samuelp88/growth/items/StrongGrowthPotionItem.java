@@ -1,8 +1,7 @@
-package com.samuelp88.growth.Items;
+package com.samuelp88.growth.items;
 
 import com.samuelp88.growth.entitys.GrowthPotionEntity;
 import com.samuelp88.growth.entitys.StrongGrowthPotionEntity;
-import net.minecraft.block.Block;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.world.World;
 
