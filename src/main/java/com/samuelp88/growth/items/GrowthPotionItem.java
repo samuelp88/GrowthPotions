@@ -1,6 +1,6 @@
 package com.samuelp88.growth.items;
 
-import com.samuelp88.growth.entitys.GrowthPotionEntity;
+import com.samuelp88.growth.entities.GrowthPotionEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -8,7 +8,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
-public class GrowthPotionItem extends ThrowablePotionItem {
+public class GrowthPotionItem extends Item {
 
     public static String registryName = "growth_potion";
 
@@ -26,7 +26,7 @@ public class GrowthPotionItem extends ThrowablePotionItem {
     public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack itemstack = playerIn.getItemInHand(handIn);
         if(!worldIn.isClientSide) {
-            worldIn.playSound((PlayerEntity)null, playerIn.getX(), playerIn.getY(), playerIn.getZ(), SoundEvents.SPLASH_POTION_THROW, SoundCategory.PLAYERS, 0.5F, 0.4F / (random.nextFloat() * 0.4F + 0.8F));
+            worldIn.playSound(null, playerIn.getX(), playerIn.getY(), playerIn.getZ(), SoundEvents.SPLASH_POTION_THROW, SoundCategory.PLAYERS, 0.5F, 0.4F / (random.nextFloat() * 0.4F + 0.8F));
             GrowthPotionEntity potionEntity = this.createEntityInstance(worldIn, playerIn);
             potionEntity.setItem(itemstack);
             potionEntity.shootFromRotation(playerIn, playerIn.xRot, playerIn.yRot, -20.0F, 0.5F, 1.0F);

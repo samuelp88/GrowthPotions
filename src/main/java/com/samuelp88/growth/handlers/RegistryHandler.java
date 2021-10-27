@@ -4,8 +4,7 @@ import com.samuelp88.growth.brewrecipes.GrowthBrewRecipe;
 import com.samuelp88.growth.Growth;
 import com.samuelp88.growth.items.GrowthPotionItem;
 import com.samuelp88.growth.items.StrongGrowthPotionItem;
-import com.samuelp88.growth.entitys.GrowthPotionEntity;
-import com.samuelp88.growth.entitys.StrongGrowthPotionEntity;
+import com.samuelp88.growth.entities.GrowthPotionEntity;
 import com.samuelp88.growth.holder.ItemHolder;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -16,6 +15,7 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.potion.Potions;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.brewing.BrewingRecipe;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -30,9 +30,6 @@ public class RegistryHandler {
             .sized(1.0f, 1.0f)
             .build(new ResourceLocation(Growth.MODID, "growthentity").toString());
 
-    public static EntityType<GrowthPotionEntity> strongGrowthPotionEntity = EntityType.Builder.<GrowthPotionEntity>of(StrongGrowthPotionEntity::new, EntityClassification.MISC)
-            .sized(1.0f, 1.0f)
-            .build(new ResourceLocation(Growth.MODID, "stronggrowthentity").toString());
 
 
     @SubscribeEvent
@@ -40,7 +37,6 @@ public class RegistryHandler {
         IForgeRegistry<EntityType<?>> registry = event.getRegistry();
 
         registry.register(growthPotionEntity.setRegistryName(Growth.MODID, "potiongrowth"));
-        registry.register(strongGrowthPotionEntity.setRegistryName(Growth.MODID, "strongpotiongrowth"));
     }
 
     @SubscribeEvent
@@ -62,8 +58,6 @@ public class RegistryHandler {
                                 .stacksTo(16),
                         StrongGrowthPotionItem.registryName
                 ));
-
-        registerBrewings();
     }
 
 
@@ -73,6 +67,13 @@ public class RegistryHandler {
                         Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.SPLASH_POTION), Potions.WATER)),
                         Ingredient.of(new ItemStack(Items.BONE_BLOCK)),
                         new ItemStack(ItemHolder.GROWTH_POTION_ITEM)
+                )
+        );
+        BrewingRecipeRegistry.addRecipe(
+                new BrewingRecipe(
+                        Ingredient.of(new ItemStack(ItemHolder.GROWTH_POTION_ITEM)),
+                        Ingredient.of(new ItemStack(Items.RED_MUSHROOM)),
+                        new ItemStack(ItemHolder.STRONG_GROWTH_POTION_ITEM)
                 )
         );
     }
